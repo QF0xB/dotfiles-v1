@@ -1,6 +1,16 @@
 {
   description = "QNixOS config v1";
 
+  nixConfig = {
+    extra-substituters = [
+      "https://cache.garnix.io"
+    ];
+
+    extra-trusted-public-keys = [
+      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+    ];
+  };
+
   inputs = {
     # Unstable NixOS Packages
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; # nixos-unstable";
