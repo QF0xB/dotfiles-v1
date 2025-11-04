@@ -31,7 +31,7 @@
       };
 
       work = {
-        citrix.enable = true;
+        # citrix.enable = true;
         teamviewer.enable = true;
       };
     };
