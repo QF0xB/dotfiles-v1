@@ -31,7 +31,7 @@ jobs:
           auto-merge: false # we only merge after tests succeed
 
       # 3️⃣ Enable FlakeHub Cache (for build/test speed)
-      - uses: DeterminateSystems/flakehub-cache-action@v4
+      - uses: DeterminateSystems/flakehub-cache-action@v2
         with:
           auth-token: ${{ secrets.FLAKEHUB_CACHE_TOKEN }}
 
@@ -51,7 +51,7 @@ jobs:
       # 5️⃣ Only push binaries if everything succeeded
       - name: Push binaries to FlakeHub Cache
         if: success()
-        uses: DeterminateSystems/flakehub-cache-action@v4
+        uses: DeterminateSystems/flakehub-cache-action@v2
         with:
           auth-token: ${{ secrets.FLAKEHUB_CACHE_TOKEN }}
           push: true
