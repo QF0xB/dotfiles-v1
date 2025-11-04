@@ -27,7 +27,7 @@ in
       };
 
       graphics.extraPackages = with pkgs; [
-        vaapiVdpau
+        libva-vdpau-driver
       ];
     };
 
