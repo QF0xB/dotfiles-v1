@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GIT_TOKEN }}
 
       # 1️⃣ Install Determinate Nix (with flakes & sandboxing)
       - uses: DeterminateSystems/nix-installer-action@v11
