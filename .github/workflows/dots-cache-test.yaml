@@ -1,9 +1,7 @@
-name: Auto Flake Update, Test, and Cache Push
+name: Auto Flake Test, and Cache Push
 
 on:
   schedule:
-    # Every 3 days at 03:00 UTC
-    - cron: "0 3 */3 * *"
   workflow_dispatch:
 
 permissions:
@@ -20,15 +18,6 @@ jobs:
 
       # 1️⃣ Install Determinate Nix (with flakes & sandboxing)
       - uses: DeterminateSystems/nix-installer-action@v11
-
-      # 2️⃣ Run automatic flake update and create a PR
-      - uses: DeterminateSystems/update-flake-lock@v21
-        with:
-          pr-title: "auto: nix flake update"
-          commit-msg: "auto: nix flake update"
-          git-author-name: "GitHub Actions"
-          git-author-email: "actions@github.com"
-          auto-merge: false # we only merge after tests succeed
 
       # 3️⃣ Enable FlakeHub Cache (for build/test speed)
       - uses: DeterminateSystems/flakehub-cache-action@v2
